@@ -1,0 +1,46 @@
+# ─────────────────────────────────────────────────────────────────────────────
+# Contribution Snake Animation – Auto-Update Workflow
+#
+# Generates a light-mode and a dark-mode SVG of the contribution-grid snake
+# and pushes them to the `output` branch, where the profile README reads them.
+#
+# ➤  Schedule: runs automatically twice a day.
+# ➤  Manual:   open Actions → "Generate Snake Animation" → Run workflow.
+# ─────────────────────────────────────────────────────────────────────────────
+
+name: Generate Snake Animation
+
+on:
+  schedule:
+    # Runs at 06:00 UTC and 18:00 UTC every day
+    - cron: "0 6,18 * * *"
+  workflow_dispatch:          # allow manual trigger from the Actions tab
+  push:
+    branches:
+      - main                  # also regenerate on every push to main
+
+jobs:
+  generate:
+    name: Generate contribution snake SVGs
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write         # needed to push to the output branch
+
+    steps:
+      # ── 1. Generate both SVG variants ──────────────────────────────────────
+      - name: Generate snake SVGs
+        uses: Platane/snk@v3
+        with:
+          github_user_name: ${{ github.repository_owner }}
+          outputs: |
+            dist/github-contribution-grid-snake.svg
+            dist/github-contribution-grid-snake-dark.svg?palette=github-dark
+
+      # ── 2. Push generated files to the `output` branch ────────────────────
+      - name: Push SVGs to output branch
+        uses: crazy-max/ghaction-github-pages@v4
+        with:
+          target_branch: output
+          build_dir: dist
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
