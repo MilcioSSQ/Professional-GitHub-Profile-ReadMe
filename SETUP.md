@@ -15,7 +15,7 @@ Go to **Settings → General → Repository name** and set it to your username.
 
 ## 2. Replace the username
 
-Open `README.md` and do a find & replace:
+Copy `PROFILE_README.md` to your username repo as `README.md`, then do a find & replace:
 
 ```
 MilcioSSQ  →  your-github-username
