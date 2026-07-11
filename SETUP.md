@@ -39,13 +39,13 @@ Find and replace these placeholders in `README.md`:
 
 | Placeholder | Replace with |
 |---|---|
-| `https://discord.gg/nEKcZ3Y5u2` | your Discord server invite |
-| `https://discord.com/users/1122944890314166423` | your Discord profile link |
-| `https://ko-fi.com/milciossq` | your Ko-fi / donation link |
-| `https://twitch.tv/milciossq` | your Twitch channel |
-| `https://twitter.com/milciossq` | your Twitter/X handle |
-| `https://leetcode.com/u/milciossq/` | your LeetCode profile |
-| `https://www.codewars.com/users/milciossq` | your Codewars profile |
+| `https://discord.gg/YOUT-INITE-LINK` | your Discord server invite |
+| `https://discord.com/users/YOUR-USER-ID` | your Discord profile link |
+| `https://ko-fi.com/YOUTR-USER-NAME` | your Ko-fi / donation link |
+| `https://twitch.tv/YOUTR-USER-NAME` | your Twitch channel |
+| `https://twitter.com/YOUTR-USER-NAME` | your Twitter/X handle |
+| `https://leetcode.com/u/YOUTR-USER-NAME/` | your LeetCode profile |
+| `https://www.codewars.com/users/YOUTR-USER-NAME` | your Codewars profile |
 
 ---
 
